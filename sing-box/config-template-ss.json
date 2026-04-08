@@ -8,12 +8,12 @@
         "method": "{{METHOD}}",
         "password": "{{PASS}}"
       }
-    ]
-    "outbounds":[
+    ],
+    "outbounds": [
         {
           "type": "{{PROTOCOL}}",
           "tag": "outline-out",
-          "server": {{SERVER}},
+          "server": "{{SERVER}}",
           "server_port": {{PORT}},
           "method": "{{METHOD}}",
           "password": "{{PASS}}"
