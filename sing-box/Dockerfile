@@ -9,6 +9,8 @@ COPY --from=sing-box /usr/local/bin/sing-box /bin/sing-box
 COPY --from=ghcr.io/tarampampam/mustpl:0.1.1 /bin/mustpl /bin/mustpl
 COPY entrypoint.sh config-template* show-template /opt/
 COPY gen* /bin/
+RUN chmod +x /opt/entrypoint.sh
+RUN chmod +x /bin/genss.sh
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
 
