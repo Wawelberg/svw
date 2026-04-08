@@ -1,5 +1,5 @@
 services:
-  spbstikaserver:
+  svw1:
     container_name: svw1
     image: wawsstek/svw
     ports:
