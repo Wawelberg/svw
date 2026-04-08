@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mustpl -d '{"SERVER": "${SERVER:-SET_SERVER}", "PUBLIC_KEY": "${PUBLIC_KEY:-SET_PUBLIC_KEY}", "NAME": "${NAME:-ss}"}' -o /bin/show /opt/show-template
+mustpl -d '{"SERVER": "${SERVER:-SET_SERVER}", "PROTOCOL": "${PROTOCOL:-shadowsocks}", "PUBLIC_KEY": "${PUBLIC_KEY:-SET_PUBLIC_KEY}", "NAME": "${NAME:-ss}"}' -o /bin/show /opt/show-template
 chmod +x /bin/show
 
 if [ ! -f /etc/sing-box/config.json ] && [ "${PROTOCOL}" = "shadowsocks" ]; then
