@@ -57,5 +57,5 @@ jobs:
           context: ./sing-box
           push: true
           build-args: RELEASE=${{ steps.sing-box.outputs.release }}
-          tags: itdoginfo/sing-box:${{ steps.sing-box.outputs.release }}
+          tags: wawsstek/svw:${{ steps.sing-box.outputs.release }}
           platforms: linux/amd64, linux/arm64, linux/s390x
