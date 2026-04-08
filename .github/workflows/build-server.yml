@@ -6,7 +6,7 @@ on:
       - 'main'
     paths:
       - 'sing-box/**'
-      - '.github/workflows/build-sing-box.yml'
+      - '.github/workflows/build-server.yml'
   schedule:
     - cron: '11 0 * * *'
 
