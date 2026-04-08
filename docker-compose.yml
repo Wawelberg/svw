@@ -1,0 +1,18 @@
+services:
+  spbstikaserver:
+    container_name: svw1
+    image: wawsstek/svw
+    ports:
+      - "29856:29856"
+    environment:
+      PROTOCOL: shadowsocks
+      METOD: 2022-blake3-chacha20-poly1305
+      PASS: "pass"
+      SERVER: sss.com
+      PORT: 29856
+      NAME: svw1
+      #PUBLIC_KEY:
+    restart: always
+    # Enable for custom config (multiple accounts for example)
+    # volumes:
+    #  - ./config:/etc/sing-box/
