@@ -4,7 +4,7 @@ mustpl -d '{"SERVER": "${SERVER:-SET_SERVER}", "PROTOCOL": "${PROTOCOL:-shadowso
 chmod +x /bin/show
 
 if [ ! -f /etc/sing-box/config.json ] && [ "${PROTOCOL}" = "shadowsocks" ]; then
-    mustpl -d '{"PROTOCOL": "${PROTOCOL:-shadowsocks}", "METHOD": "${METHOD:-2022-blake3-chacha20-poly1305}", "PASS": "${PASS:-SET_PASSWORD}", "PORT": "${PORT:-443}"}' -o /etc/sing-box/config.json /opt/config-template-ss.json
+    mustpl -d '{"SERVER": "${SERVER:-SET_SERVER}", "PROTOCOL": "${PROTOCOL:-shadowsocks}", "METHOD": "${METHOD:-2022-blake3-chacha20-poly1305}", "PASS": "${PASS:-SET_PASSWORD}", "PORT": "${PORT:-443}"}' -o /etc/sing-box/config.json /opt/config-template-ss.json
 elif [ ! -f /etc/sing-box/config.json ] && [ "${PROTOCOL}" = "vless" ]; then
     mustpl -d '{"UUID": "${UUID:-SET_UUID}", "PRIVATE_KEY": "${PRIVATE_KEY:-SET_PRIVATE_KEY}", "SHORT_ID": "${SHORT_ID:-153bb5b1383b79fd}", "FAKE_SERVER": "${FAKE_SERVER:-www.google.com}", "PORT": "${PORT:-443}", "NAME": "${NAME:-vless}"}}' -o /etc/sing-box/config.json /opt/config-template-vless.json
 fi
