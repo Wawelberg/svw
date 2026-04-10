@@ -3,6 +3,9 @@
 mustpl -d '{"SERVER": "${SERVER:-SET_SERVER}", "PROTOCOL": "${PROTOCOL:-shadowsocks}", "PUBLIC_KEY": "${PUBLIC_KEY:-SET_PUBLIC_KEY}", "NAME": "${NAME:-ss}"}' -o /bin/show /opt/show-template
 chmod +x /bin/show
 
+mustpl -d '{"SERVER": "${SERVER:-SET_SERVER}", "PROTOCOL": "${PROTOCOL:-shadowsocks}", "PUBLIC_KEY": "${PUBLIC_KEY:-SET_PUBLIC_KEY}", "NAME": "${NAME:-ss}"}' -o /bin/showcha /opt/show-templatecha
+chmod +x /bin/showcha
+
 if [ ! -f /etc/sing-box/config.json ] && [ "${PROTOCOL}" = "shadowsocks" ]; then
     mustpl -d '{"SERVER": "${SERVER:-SET_SERVER}", "PROTOCOL": "${PROTOCOL:-shadowsocks}", "METHOD": "${METHOD:-2022-blake3-chacha20-poly1305}", "PASS": "${PASS:-SET_PASSWORD}", "PORT": "${PORT:-443}"}' -o /etc/sing-box/config.json /opt/config-template-ss.json
 elif [ ! -f /etc/sing-box/config.json ] && [ "${PROTOCOL}" = "vless" ]; then
